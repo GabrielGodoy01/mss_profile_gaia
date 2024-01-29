@@ -56,22 +56,9 @@ class IacStack(Stack):
             "DYNAMO_PARTITION_KEY": "PK",
         }
 
-        self.cognito_auth = CognitoUserPoolsAuthorizer(self, f"gaia_profile_cognito_auth_{self.github_ref_name}",
-                                                       cognito_user_pools=[aws_cognito.UserPool.from_user_pool_arn(
-                                                           self, f"gaia_profile_cognito_auth_userpool_{self.github_ref_name}",
-                                                           self.user_pool_arn
-                                                       )]
-                                                       )
-
-
-
         self.lambda_stack = LambdaStack(self, api_gateway_resource=api_gateway_resource,
-                                        environment_variables=ENVIRONMENT_VARIABLES, authorizer=self.cognito_auth)
+                                        environment_variables=ENVIRONMENT_VARIABLES)
 
-        for f in self.lambda_stack.functions_that_need_dynamo_permissions:
-            self.dynamo_stack.dynamo_table.grant_read_write_data(f)
-
-    
         for f in self.lambda_stack.functions_that_need_dynamo_permissions:
             self.dynamo_stack.dynamo_table.grant_read_write_data(f)
         
