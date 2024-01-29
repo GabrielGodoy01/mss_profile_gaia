@@ -20,7 +20,3 @@ class IUserRepository(ABC):
     @abstractmethod
     def get_user_by_id(self, user_id: str) -> Optional[User]:
         pass
-
-    @abstractmethod
-    def check_user_group(self, user_id: str) -> bool:
-        pass

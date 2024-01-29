@@ -13,7 +13,7 @@ class UpdateUserUsecase:
         user = self.repo.get_user_by_id(user_id=new_user_data.user_id)
 
         if user is None:
-            raise NoItemsFound("user")
+            raise NoItemsFound("user_id não encontrado")
                 
         if user.department != 'ADMINISTRADOR' and user.department != 'INTELICITY':
             raise ForbiddenAction("Usuário não é Administrador")

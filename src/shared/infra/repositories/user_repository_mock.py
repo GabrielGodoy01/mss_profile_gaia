@@ -52,6 +52,3 @@ class UserRepositoryMock(IUserRepository):
             user_to_update.role_usuarios = new_user_data.role_usuarios
             user_to_update.department = new_user_data.department
             return user_to_update
-
-    def check_user_group(self, user_id: str) -> bool:
-        return True
