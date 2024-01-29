@@ -33,7 +33,7 @@ class LambdaStack(Construct):
 
     def __init__(self, scope: Construct, api_gateway_resource: Resource, environment_variables: dict,
                  authorizer: CognitoUserPoolsAuthorizer) -> None:
-        super().__init__(scope, "GaiaProfile_Lambdas")
+        super().__init__(scope, "GaiaProfile_Lambda")
 
         self.lambda_layer = lambda_.LayerVersion(self, "GaiaProfile_Layer",
                                                  code=lambda_.Code.from_asset("./lambda_layer_out_temp"),
