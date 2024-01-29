@@ -23,6 +23,9 @@ stack_name = os.environ.get("STACK_NAME")
 github_ref_name = os.environ.get("GITHUB_REF_NAME")
 
 print(stack_name)
+print(aws_region)
+print(aws_account_id)
+print(github_ref_name)
 
 if 'prod' == github_ref_name:
     stage = 'PROD'
