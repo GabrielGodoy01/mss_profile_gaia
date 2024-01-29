@@ -30,7 +30,7 @@ class Environments:
 
         self.region = os.environ.get("AWS_REGION")
         self.endpoint_url = os.environ.get("ENDPOINT_URL")
-        self.dynamo_table_name = os.environ.get("DYNAMO_TABLE_NAME_PRODUCT")
+        self.dynamo_table_name = os.environ.get("DYNAMO_TABLE_NAME")
         self.dynamo_sort_key = os.environ.get("DYNAMO_SORT_KEY")
 
     @staticmethod
@@ -39,7 +39,7 @@ class Environments:
             from src.shared.infra.repositories.user_repository_mock import UserRepositoryMock
             return UserRepositoryMock
         elif Environments.get_envs().stage in [STAGE.PROD, STAGE.HOMOLOG]:
-            from src.shared.infra.repositories.user_repository_db import UserRepositoryDynamo
+            from src.shared.infra.repositories.user_repository_dynamo import UserRepositoryDynamo
             return UserRepositoryDynamo
         else:
             raise Exception("No repository found for this stage")

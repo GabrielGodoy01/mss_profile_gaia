@@ -133,8 +133,7 @@ class UserDynamoDTO:
         )
     
     def __repr__(self):
-        return f"UserDynamoDto(name={self.name}, email={self.email}, user_id={self.user_id}, enabled={self.enabled}, department={self.department}, role_dashboards={self.role_dashboards}, role_fiscalizacao={self.role_fiscalizacao}, 
-        role_geoinfra={self.role_geoinfra}, role_drenagem={self.role_drenagem}, role_usuarios={self.role_usuarios}, role_tickets={self.role_tickets}, role_cadastro_obra={self.role_cadastro_obra}, role_selimp={self.role_selimp}, role_compat={self.role_compat})"
+        return f"UserDynamoDto(name={self.name}, email={self.email}, user_id={self.user_id}, enabled={self.enabled}, department={self.department}, role_dashboards={self.role_dashboards}, role_fiscalizacao={self.role_fiscalizacao}, role_geoinfra={self.role_geoinfra}, role_drenagem={self.role_drenagem}, role_usuarios={self.role_usuarios}, role_tickets={self.role_tickets}, role_cadastro_obra={self.role_cadastro_obra}, role_selimp={self.role_selimp}, role_compat={self.role_compat})"
 
     def __eq__(self, other):
         return self.__dict__ == other.__dict__

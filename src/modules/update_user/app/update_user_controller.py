@@ -3,7 +3,7 @@ from .update_user_usecase import UpdateUserUsecase
 from .update_user_viewmodel import UpdateUserViewmodel
 from src.shared.helpers.errors.controller_errors import MissingParameters
 from src.shared.helpers.errors.domain_errors import EntityError
-from src.shared.helpers.errors.usecase_errors import ForbiddenAction, InvalidCredentials, InvalidTokenError, NoItemsFound, UserNotConfirmed
+from src.shared.helpers.errors.usecase_errors import ForbiddenAction, InvalidCredentials, InvalidTokenError, NoItemsFound
 from src.shared.helpers.external_interfaces.external_interface import IRequest, IResponse
 from src.shared.helpers.external_interfaces.http_codes import OK, NotFound, BadRequest, InternalServerError, Forbidden, Unauthorized
 
@@ -92,9 +92,6 @@ class UpdateUserController:
 
         except InvalidCredentials as err:
             return BadRequest(body={"message": f"Token inválido: {err.message}"})
-        
-        except UserNotConfirmed as err:
-            return BadRequest(body={"message": f"Usuário não confirmado."})
 
         except ForbiddenAction as err:
             return Forbidden(body={"message": f"Ação não permitida: {err.message}"})

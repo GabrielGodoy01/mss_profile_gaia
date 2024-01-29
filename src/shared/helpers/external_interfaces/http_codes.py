@@ -54,11 +54,6 @@ class Unauthorized(HttpResponse):
     def __init__(self, body: str) -> None:
         super().__init__(HttpStatusCodeEnum.UNAUTHORIZED.value, body)
 
-class UnauthorizedFirstLogin(HttpResponse):
-    def __init__(self, body: dict) -> None:
-        super().__init__(HttpStatusCodeEnum.UNAUTHORIZED.value, None)
-        self.body = body
-
 class InvalidToken(HttpResponse):
     def __init__(self, body: str) -> None:
         super().__init__(HttpStatusCodeEnum.INVALID_TOKEN.value, body)

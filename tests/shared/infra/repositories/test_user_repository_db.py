@@ -1,6 +1,6 @@
 import pytest
 from src.shared.helpers.errors.usecase_errors import NoItemsFound
-from src.shared.infra.repositories.user_repository_db import UserRepositoryDynamo
+from src.shared.infra.repositories.user_repository_dynamo import UserRepositoryDynamo
 
 
 class Test_UserRepositoryDb:

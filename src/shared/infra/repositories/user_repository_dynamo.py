@@ -55,7 +55,14 @@ class UserRepositoryDynamo(IUserRepository):
         return user
 
     def get_all_users(self) -> List[User]:
-        pass
+        response = self.dynamo.get_all_items()
+
+        users= list()
+
+        for item in response["Items"]:
+            users.append(UserDynamoDTO.from_dynamo(item).to_entity())
+        
+        return users
 
     def create_profile(self, user: User) -> User:
         if not self.check_user_id_cognito(user_id=user.user_id):
