@@ -72,7 +72,7 @@ class IacStack(Stack):
             self.dynamo_stack.dynamo_table.grant_read_write_data(f)
 
     
-        for f in self.lambda_stack.functions_that_need_dynamo_user_permissions:
+        for f in self.lambda_stack.functions_that_need_dynamo_permissions:
             self.dynamo_stack.dynamo_table_user.grant_read_write_data(f)
         
         cognito_admin_policy = aws_iam.PolicyStatement(
