@@ -48,7 +48,7 @@ jobs:
             cd iac
             cdk synth
             cdk bootstrap
-            cdk deploy --require-approval never 
+            cdk deploy "${{env.STACK_NAME}}" --require-approval never 
 
           env:
               AWS_REGION: ${{ vars.AWS_REGION }}
