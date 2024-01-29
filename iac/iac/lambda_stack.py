@@ -3,7 +3,7 @@ from aws_cdk import (
     Duration
 )
 from constructs import Construct
-from aws_cdk.aws_apigateway import Resource, LambdaIntegration, CognitoUserPoolsAuthorizer
+from aws_cdk.aws_apigateway import Resource, LambdaIntegration
 
 
 class LambdaStack(Construct):
@@ -11,7 +11,7 @@ class LambdaStack(Construct):
     functions_that_need_cognito_permissions = []
 
     def create_lambda_api_gateway_integration(self, module_name: str, method: str, api_resource: Resource,
-                                              environment_variables: dict = {"STAGE": "DEV"}, authorizer=None):
+                                              environment_variables: dict = {"STAGE": "DEV"}):
 
         function = lambda_.Function(
             self, module_name.title(),
@@ -30,8 +30,7 @@ class LambdaStack(Construct):
 
         return function
 
-    def __init__(self, scope: Construct, api_gateway_resource: Resource, environment_variables: dict,
-                 authorizer: CognitoUserPoolsAuthorizer) -> None:
+    def __init__(self, scope: Construct, api_gateway_resource: Resource, environment_variables: dict) -> None:
         super().__init__(scope, "GaiaProfile_Lambda")
 
         self.lambda_layer = lambda_.LayerVersion(self, "GaiaProfile_Layer",
@@ -44,7 +43,6 @@ class LambdaStack(Construct):
             method="GET",
             api_resource=api_gateway_resource,
             environment_variables=environment_variables,
-            authorizer=authorizer
         )
 
         self.update_user = self.create_lambda_api_gateway_integration(
@@ -52,7 +50,6 @@ class LambdaStack(Construct):
             method="POST",
             api_resource=api_gateway_resource,
             environment_variables=environment_variables,
-            authorizer=authorizer
         )
 
         self.login_user = self.create_lambda_api_gateway_integration(
@@ -60,7 +57,6 @@ class LambdaStack(Construct):
             method="POST",
             api_resource=api_gateway_resource,
             environment_variables=environment_variables,
-            authorizer=authorizer
         )
 
         self.functions_that_need_dynamo_permissions = [
