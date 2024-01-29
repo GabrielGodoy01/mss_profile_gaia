@@ -52,7 +52,6 @@ class IacStack(Stack):
 
         ENVIRONMENT_VARIABLES = {
             "STAGE": stage,
-            "USER_POOL":  self.user_pool_id,
             "DYNAMO_TABLE_NAME": self.dynamo_stack.dynamo_table.table_name,
             "DYNAMO_PARTITION_KEY": "PK",
         }
