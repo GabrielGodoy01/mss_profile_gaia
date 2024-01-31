@@ -52,15 +52,16 @@ class IacStack(Stack):
 
         ENVIRONMENT_VARIABLES = {
             "STAGE": stage,
-            "DYNAMO_TABLE_NAME": self.dynamo_stack.dynamo_table.table_name,
+            "DYNAMO_TABLE_NAME": self.dynamo_stack.dynamo_table.table_name if not stage == "DEV" else "MOCK",
             "DYNAMO_PARTITION_KEY": "PK",
         }
 
         self.lambda_stack = LambdaStack(self, api_gateway_resource=api_gateway_resource,
                                         environment_variables=ENVIRONMENT_VARIABLES)
-
-        for f in self.lambda_stack.functions_that_need_dynamo_permissions:
-            self.dynamo_stack.dynamo_table.grant_read_write_data(f)
+        
+        if not stage == "DEV":
+            for f in self.lambda_stack.functions_that_need_dynamo_permissions:
+                self.dynamo_stack.dynamo_table.grant_read_write_data(f)
         
         cognito_admin_policy = aws_iam.PolicyStatement(
             effect=aws_iam.Effect.ALLOW,
