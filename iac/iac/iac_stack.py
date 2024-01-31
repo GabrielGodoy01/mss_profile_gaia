@@ -22,7 +22,16 @@ class IacStack(Stack):
         self.github_ref_name = os.environ.get("GITHUB_REF_NAME")
         self.aws_region = os.environ.get("AWS_REGION")
 
-        self.dynamo_stack = DynamoStack(self)
+        if 'prod' in self.github_ref_name:
+            stage = 'PROD'
+            self.dynamo_stack = DynamoStack(self)
+
+        elif 'homolog' in self.github_ref_name:
+            stage = 'HOMOLOG'
+            self.dynamo_stack = DynamoStack(self)
+
+        else:
+            stage = 'DEV'
 
         self.rest_api = RestApi(self, f"GaiaProfile_RestApi_{self.github_ref_name}",
                                 rest_api_name=f"GaiaProfile_RestApi_{self.github_ref_name}",
@@ -40,15 +49,6 @@ class IacStack(Stack):
             "allow_headers": Cors.DEFAULT_HEADERS
         }
         )
-
-        if 'prod' in self.github_ref_name:
-            stage = 'PROD'
-
-        elif 'homolog' in self.github_ref_name:
-            stage = 'HOMOLOG'
-
-        else:
-            stage = 'DEV'
 
         ENVIRONMENT_VARIABLES = {
             "STAGE": stage,
