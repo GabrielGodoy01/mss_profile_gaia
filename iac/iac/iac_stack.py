@@ -23,7 +23,7 @@ class IacStack(Stack):
         self.aws_region = os.environ.get("AWS_REGION")
 
         self.dynamo_stack = DynamoStack(self)
-        
+
         if 'prod' in self.github_ref_name:
             stage = 'PROD'
 
@@ -59,9 +59,8 @@ class IacStack(Stack):
         self.lambda_stack = LambdaStack(self, api_gateway_resource=api_gateway_resource,
                                         environment_variables=ENVIRONMENT_VARIABLES)
         
-        if not stage == "DEV":
-            for f in self.lambda_stack.functions_that_need_dynamo_permissions:
-                self.dynamo_stack.dynamo_table.grant_read_write_data(f)
+        for f in self.lambda_stack.functions_that_need_dynamo_permissions:
+            self.dynamo_stack.dynamo_table.grant_read_write_data(f)
         
         cognito_admin_policy = aws_iam.PolicyStatement(
             effect=aws_iam.Effect.ALLOW,
