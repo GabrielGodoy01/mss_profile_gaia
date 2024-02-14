@@ -52,8 +52,11 @@ class IacStack(Stack):
 
         ENVIRONMENT_VARIABLES = {
             "STAGE": stage,
-            "DYNAMO_TABLE_NAME": self.dynamo_stack.dynamo_table.table_name if not stage == "DEV" else "MOCK",
+            "DYNAMO_TABLE_NAME": self.dynamo_stack.dynamo_table.table_name,
             "DYNAMO_PARTITION_KEY": "PK",
+            "DYNAMO_SORT_KEY": "SK",
+            "DYNAMO_GSI_PARTITION_KEY": "GSI1-PK",
+            "DYNAMO_GSI_SORT_KEY": "GSI1-SK",
         }
 
         self.lambda_stack = LambdaStack(self, api_gateway_resource=api_gateway_resource,
