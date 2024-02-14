@@ -31,7 +31,7 @@ class UserRepositoryDynamo(IUserRepository):
                 Username=user_id
             )
 
-            if not response['UserStatus'] == 'CONFIRMED':
+            if response['UserStatus'] == 'CONFIRMED':
                 return True
 
             return False
