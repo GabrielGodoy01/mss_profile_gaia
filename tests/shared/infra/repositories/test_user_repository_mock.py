@@ -25,10 +25,14 @@ class Test_UserRepositoryMock:
     
     def test_create_profile(self):
         repo = UserRepositoryMock()
+        user_to_create = User(
+            user_id="e73626b5-462d-4a3f-bef5-ae7cbb45e123",
+            email="gabriel.godoybz@gmail.com",
+            name="User Teste",
+            enabled=True,
+        )
         user = repo.create_profile(
-                user_id="e73626b5-462d-4a3f-bef5-ae7cbb45e123",
-                email="gabriel.godoybz@gmail.com",
-                name="User Teste"
+                user=user_to_create
         )
 
         assert user.name == 'User Teste'

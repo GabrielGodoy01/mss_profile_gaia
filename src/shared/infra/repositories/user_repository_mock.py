@@ -27,8 +27,7 @@ class UserRepositoryMock(IUserRepository):
         else:
             return None
     
-    def create_profile(self, user_id: str, name: str, email: str) -> User:
-        user = User(user_id=user_id, name=name, email=email, enabled=True, department=None, role_dashboards=None, role_cadastro_obra=None, role_compat=None, role_drenagem=None, role_fiscalizacao=None, role_geoinfra=None, role_selimp=None, role_usuarios=None, role_tickets=None)
+    def create_profile(self, user: User) -> User:
         self.users_list.append(user)
         return user
     

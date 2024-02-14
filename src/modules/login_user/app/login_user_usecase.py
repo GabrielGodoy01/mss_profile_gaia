@@ -16,7 +16,8 @@ class LoginUserUsecase:
 
         if user is None:
             if "GAIA" in groups:
-                return self.repo.create_profile(user_id=user_id,name=name, email=email)
+                user = User(user_id=user_id,name=name, email=email, enabled=True, )
+                return self.repo.create_profile(user=user)
             else:
                 raise InvalidCredentials(message="Usuário não esta apto para o sistema")
         return user

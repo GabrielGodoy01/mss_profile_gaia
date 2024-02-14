@@ -6,7 +6,7 @@ from src.shared.domain.entities.user import User
 class IUserRepository(ABC):
 
     @abstractmethod
-    def create_profile(self, user_id: str, name: str, email: str) -> User:
+    def create_profile(self, user: User) -> User:
         pass
 
     @abstractmethod
