@@ -73,7 +73,7 @@ class UserDynamoDTO:
             "enabled": self.enabled,
             "department": self.department if self.department is not None else None,
             "role_dashboards": self.role_dashboards if self.role_dashboards is not None else None,
-            "role_fiscalizacao": self.role_fiscalizacao if self.role_fiscalacao is not None else None,
+            "role_fiscalizacao": self.role_fiscalizacao if self.role_fiscalizacao is not None else None,
             "role_geoinfra": self.role_geoinfra if self.role_geoinfra is not None else None,
             "role_drenagem": self.role_drenagem if self.role_drenagem is not None else None,
             "role_usuarios": self.role_usuarios if self.role_usuarios is not None else None,
