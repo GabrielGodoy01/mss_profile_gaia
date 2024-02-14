@@ -66,8 +66,7 @@ class UserRepositoryDynamo(IUserRepository):
         if not self.check_user_id_cognito(user_id=user.user_id):
             raise UserNotValid(message="Usuário inválido")
         
-        user_dto = UserDynamoDTO.from_entity(user=user)
-        item = user_dto.to_dynamo()
+        item = UserDynamoDTO.from_entity(user=user).to_dynamo()
 
         resp = self.dynamo.put_item(
             partition_key=self.partition_key_format(user.user_id),
