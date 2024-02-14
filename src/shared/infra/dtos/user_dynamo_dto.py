@@ -71,21 +71,21 @@ class UserDynamoDTO:
             "email": self.email,
             "user_id": self.user_id,
             "enabled": self.enabled,
-            "department": self.department if self.department is not None else None,
-            "role_dashboards": self.role_dashboards if self.role_dashboards is not None else None,
-            "role_fiscalizacao": self.role_fiscalizacao if self.role_fiscalizacao is not None else None,
-            "role_geoinfra": self.role_geoinfra if self.role_geoinfra is not None else None,
-            "role_drenagem": self.role_drenagem if self.role_drenagem is not None else None,
-            "role_usuarios": self.role_usuarios if self.role_usuarios is not None else None,
-            "role_tickets": self.role_tickets if self.role_tickets is not None else None,
-            "role_cadastro_obra": self.role_cadastro_obra if self.role_cadastro_obra is not None else None,
-            "role_selimp": self.role_selimp if self.role_selimp is not None else None,
-            "role_compat": self.role_compat if self.role_compat is not None else None
+            "department": self.department,
+            "role_dashboards": self.role_dashboards,
+            "role_fiscalizacao": self.role_fiscalizacao,
+            "role_geoinfra": self.role_geoinfra,
+            "role_drenagem": self.role_drenagem,
+            "role_usuarios": self.role_usuarios,
+            "role_tickets": self.role_tickets,
+            "role_cadastro_obra": self.role_cadastro_obra,
+            "role_selimp": self.role_selimp,
+            "role_compat": self.role_compat
         }
 
-        data_without_none_values = {k: v for k, v in data.items() if v is not None}
+        # data_without_none_values = {k: v for k, v in data.items() if v is not None}
 
-        return data_without_none_values
+        return data
 
     @staticmethod
     def from_dynamo(user_data: dict) -> "UserDynamoDTO":
