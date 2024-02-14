@@ -19,6 +19,7 @@ class IacStack(Stack):
         super().__init__(scope, construct_id, **kwargs)
 
         self.user_pool_arn = os.environ.get("USER_POOL_ARN")
+        self.user_pool_id = os.environ.get("USER_POOL_ID")
         self.github_ref_name = os.environ.get("GITHUB_REF_NAME")
         self.aws_region = os.environ.get("AWS_REGION")
 
@@ -52,11 +53,12 @@ class IacStack(Stack):
 
         ENVIRONMENT_VARIABLES = {
             "STAGE": stage,
+            "USER_POOL_ID": self.user_pool_id,
             "DYNAMO_TABLE_NAME": self.dynamo_stack.dynamo_table.table_name,
             "DYNAMO_PARTITION_KEY": "PK",
             "DYNAMO_SORT_KEY": "SK",
             "DYNAMO_GSI_PARTITION_KEY": "GSI1-PK",
-            "DYNAMO_GSI_SORT_KEY": "GSI1-SK",
+            "DYNAMO_GSI_SORT_KEY": "GSI1-SK"
         }
 
         self.lambda_stack = LambdaStack(self, api_gateway_resource=api_gateway_resource,

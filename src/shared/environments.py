@@ -23,6 +23,7 @@ class Environments:
     endpoint_url: str = None
     dynamo_table_name: str
     dynamo_partition_key: str
+    user_pool_id: str
 
     def _configure_local(self):
         from dotenv import load_dotenv
@@ -40,11 +41,13 @@ class Environments:
             self.endpoint_url = "test"
             self.dynamo_table_name = "user"
             self.dynamo_partition_key = "pk"
+            self.user_pool_id = "test"
         else:
             self.region = os.environ.get("AWS_REGION")
             self.endpoint_url = os.environ.get("ENDPOINT_URL")
             self.dynamo_table_name = os.environ.get("DYNAMO_TABLE_NAME")
             self.dynamo_partition_key = os.environ.get("DYNAMO_PARTITION_KEY")
+            self.user_pool_id = os.environ.get("USER_POOL_ID")
 
     @staticmethod
     def get_user_repo() -> IUserRepository:
