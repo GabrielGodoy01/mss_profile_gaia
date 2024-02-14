@@ -18,6 +18,7 @@ class DynamoDatasource:
                  partition_key: str, 
                  region: str,
                  endpoint_url: str = None,
+                 sort_key: str = None
                 ):
 
         s = boto3.Session(region_name=region)
