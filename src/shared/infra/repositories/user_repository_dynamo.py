@@ -14,6 +14,11 @@ class UserRepositoryDynamo(IUserRepository):
     def __init__(self):
         self.client_cognito = boto3.client('cognito-idp', region_name=Environments.get_envs().region)
         self.user_pool_id = Environments.get_envs().user_pool_id
+        self.dynamo = DynamoDatasource(endpoint_url=Environments.get_envs().endpoint_url,
+                                       dynamo_table_name=Environments.get_envs().dynamo_table_name,
+                                       region=Environments.get_envs().region,
+                                       partition_key=Environments.get_envs().dynamo_partition_key,
+                                       )
 
     @staticmethod
     def partition_key_format(user_id: str) -> str:
@@ -35,14 +40,7 @@ class UserRepositoryDynamo(IUserRepository):
             if error_code == 'NotAuthorizedException':
                 raise InvalidTokenError(message="Token inválido ou expirado")
             else:
-                raise ForbiddenAction(message=e.response.get('Error').get('Message'))
-
-    def __init__(self):
-        self.dynamo = DynamoDatasource(endpoint_url=Environments.get_envs().endpoint_url,
-                                       dynamo_table_name=Environments.get_envs().dynamo_table_name,
-                                       region=Environments.get_envs().region,
-                                       partition_key=Environments.get_envs().dynamo_partition_key,
-                                       )
+                raise ForbiddenAction(message=e.response.get('Error').get('Message'))        
     
     def get_user_by_id(self, user_id: str) -> Optional[User]:
         user_data = self.dynamo.get_item(partition_key=self.partition_key_format(user_id=user_id))                    
