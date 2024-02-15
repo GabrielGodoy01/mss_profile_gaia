@@ -43,34 +43,54 @@ class Test_UserRepositoryMock:
         repo.update_user_by_id(
             new_user_data=User(
                 user_id="e73626b5-462d-4a3f-bef5-ae7cbb45e123",
-                email="gabriel.godoybz@hotmail.com",
+                email="gabriel@hotmail.com",
                 name="User Teste",
                 enabled=False,
-                role_cadastro_obra=False,
-                role_compat=False,
-                role_dashboards=False,
-                role_drenagem=False,
-                role_fiscalizacao=False,
-                role_geoinfra=False,
-                role_selimp=False,
-                role_tickets=False,
+                department='Teste',
+                role_dashboard_qualidade=False,
+                role_dashboard_deteccao=False,
+                role_dashboard_tempo=False,
+                role_dashboard_geoinfra=False,
+                role_dashboard_recapeamento=False,
+                role_dashboard_anel_viario=False,
+                role_dashboard_sist_unificado=False,
+                role_modfisc_convias=False,
+                role_modfisc_osmv=False,
+                role_modfisc_osct=False,
+                role_modfisc_relatoriomv=False,
+                role_modfisc_vistoriapv=False,
+                role_modfisc_vistoriarecape=False,
+                role_interf_mapa=False,
+                role_interf_protproc=False,
+                role_drenagem_ativos=False,
+                role_drenagem_redes=False,
                 role_usuarios=False,
-                department='Teste'
+                role_tickets=False
             )
         )
 
         assert repo.users_list[0].name == 'User Teste'
         assert repo.users_list[0].enabled == False
-        assert repo.users_list[0].role_cadastro_obra == False
-        assert repo.users_list[0].role_compat == False
-        assert repo.users_list[0].role_dashboards == False
-        assert repo.users_list[0].role_drenagem == False
-        assert repo.users_list[0].role_fiscalizacao == False
-        assert repo.users_list[0].role_geoinfra == False
-        assert repo.users_list[0].role_selimp == False
-        assert repo.users_list[0].role_tickets == False
-        assert repo.users_list[0].role_usuarios == False
         assert repo.users_list[0].department == 'Teste'
+        assert repo.users_list[0].role_dashboard_qualidade == False
+        assert repo.users_list[0].role_dashboard_deteccao == False
+        assert repo.users_list[0].role_dashboard_tempo == False
+        assert repo.users_list[0].role_dashboard_geoinfra == False
+        assert repo.users_list[0].role_dashboard_recapeamento == False
+        assert repo.users_list[0].role_dashboard_anel_viario == False
+        assert repo.users_list[0].role_dashboard_sist_unificado == False
+        assert repo.users_list[0].role_modfisc_convias == False
+        assert repo.users_list[0].role_modfisc_osmv == False
+        assert repo.users_list[0].role_modfisc_osct == False
+        assert repo.users_list[0].role_modfisc_relatoriomv == False
+        assert repo.users_list[0].role_modfisc_vistoriapv == False
+        assert repo.users_list[0].role_modfisc_vistoriarecape == False
+        assert repo.users_list[0].role_interf_mapa == False
+        assert repo.users_list[0].role_interf_protproc == False
+        assert repo.users_list[0].role_drenagem_ativos == False
+        assert repo.users_list[0].role_drenagem_redes == False
+        assert repo.users_list[0].role_usuarios == False
+        assert repo.users_list[0].role_tickets == False
 
     def test_update_user_non_exists(self):
         repo = UserRepositoryMock()
@@ -80,16 +100,26 @@ class Test_UserRepositoryMock:
                 email="gabriel@godoybz.com",
                 name="User Teste",
                 enabled=False,
-                role_cadastro_obra=False,
-                role_compat=False,
-                role_dashboards=False,
-                role_drenagem=False,
-                role_fiscalizacao=False,
-                role_geoinfra=False,
-                role_selimp=False,
-                role_tickets=False,
+                department='Teste',
+                role_dashboard_qualidade=False,
+                role_dashboard_deteccao=False,
+                role_dashboard_tempo=False,
+                role_dashboard_geoinfra=False,
+                role_dashboard_recapeamento=False,
+                role_dashboard_anel_viario=False,
+                role_dashboard_sist_unificado=False,
+                role_modfisc_convias=False,
+                role_modfisc_osmv=False,
+                role_modfisc_osct=False,
+                role_modfisc_relatoriomv=False,
+                role_modfisc_vistoriapv=False,
+                role_modfisc_vistoriarecape=False,
+                role_interf_mapa=False,
+                role_interf_protproc=False,
+                role_drenagem_ativos=False,
+                role_drenagem_redes=False,
                 role_usuarios=False,
-                department='Teste'
+                role_tickets=False
             )
         )
         assert user == None

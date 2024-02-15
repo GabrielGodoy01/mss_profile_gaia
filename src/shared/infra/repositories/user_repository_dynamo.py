@@ -90,15 +90,25 @@ class UserRepositoryDynamo(IUserRepository):
                 "email": new_user_data.email, 
                 "enabled": new_user_data.enabled, 
                 "department": new_user_data.department, 
-                "role_dashboards": new_user_data.role_dashboards,
-                "role_fiscalizacao": new_user_data.role_fiscalizacao,
-                "role_geoinfra": new_user_data.role_geoinfra,
-                "role_drenagem": new_user_data.role_drenagem,
+                "role_dashboard_qualidade": new_user_data.role_dashboard_qualidade,
+                "role_dashboard_deteccao": new_user_data.role_dashboard_deteccao,
+                "role_dashboard_tempo": new_user_data.role_dashboard_tempo,
+                "role_dashboard_geoinfra": new_user_data.role_dashboard_geoinfra,
+                "role_dashboard_recapeamento": new_user_data.role_dashboard_recapeamento,
+                "role_dashboard_anel_viario": new_user_data.role_dashboard_anel_viario,
+                "role_dashboard_sist_unificado": new_user_data.role_dashboard_sist_unificado,
+                "role_modfisc_convias": new_user_data.role_modfisc_convias,
+                "role_modfisc_osmv": new_user_data.role_modfisc_osmv,
+                "role_modfisc_osct": new_user_data.role_modfisc_osct,
+                "role_modfisc_relatoriomv": new_user_data.role_modfisc_relatoriomv,
+                "role_modfisc_vistoriapv": new_user_data.role_modfisc_vistoriapv,
+                "role_modfisc_vistoriarecape": new_user_data.role_modfisc_vistoriarecape,
+                "role_interf_mapa": new_user_data.role_interf_mapa,
+                "role_interf_protproc": new_user_data.role_interf_protproc,
+                "role_drenagem_ativos": new_user_data.role_drenagem_ativos,
+                "role_drenagem_redes": new_user_data.role_drenagem_redes,
                 "role_usuarios": new_user_data.role_usuarios,
-                "role_tickets": new_user_data.role_tickets,
-                "role_cadastro_obra": new_user_data.role_cadastro_obra,
-                "role_selimp": new_user_data.role_selimp,
-                "role_compat": new_user_data.role_compat
+                "role_tickets": new_user_data.role_tickets
             })
 
         if "Attributes" not in response:

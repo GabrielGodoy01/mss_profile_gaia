@@ -11,10 +11,10 @@ class Test_LoginUserUsecase:
         repo = UserRepositoryMock()
         usecase = LoginUserUsecase(repo)
 
-        user = usecase(user_id='e73626b5-462d-4a3f-bef5-ae7cbb45e123', name='Gabriel', email='gabriel.godoybz@hotmail.com', groups=['INTELICITY'])
+        user = usecase(user_id='e73626b5-462d-4a3f-bef5-ae7cbb45e123', name='Gabriel', email='gabriel@hotmail.com', groups=['INTELICITY'])
 
         assert user.user_id == 'e73626b5-462d-4a3f-bef5-ae7cbb45e123'
-        assert user.email == 'gabriel.godoybz@hotmail.com'
+        assert user.email == 'gabriel@hotmail.com'
         assert user.name == 'Gabriel'
         assert user.department == 'INTELICITY'
         assert user.enabled == True
@@ -33,22 +33,22 @@ class Test_LoginUserUsecase:
         usecase = LoginUserUsecase(repo)
 
         with pytest.raises(EntityError):
-            user = usecase(user_id='e73626b5-462d-4a3f-bef5-ae7', name='Gabriel', email='gabriel.godoybz@hotmail.com', groups=['GAIA'])
+            user = usecase(user_id='e73626b5-462d-4a3f-bef5-ae7', name='Gabriel', email='gabriel@hotmail.com', groups=['GAIA'])
     
     def test_login_user_usecase_not_in_group(self):
         repo = UserRepositoryMock()
         usecase = LoginUserUsecase(repo)
 
         with pytest.raises(InvalidCredentials):
-            user = usecase(user_id='e73626b5-462d-4a3f-bef5-ae7', name='Gabriel', email='gabriel.godoybz@hotmail.com', groups=[''])
+            user = usecase(user_id='e73626b5-462d-4a3f-bef5-ae7', name='Gabriel', email='gabriel@hotmail.com', groups=[''])
     
     def test_login_user_usecase_create_new_user(self):
         repo = UserRepositoryMock()
         usecase = LoginUserUsecase(repo)
-        user = usecase(user_id='e73626b5-462d-4a3f-bef5-ae7cbb45e124', name='Gabriel', email='gabriel.godoybz@hotmail.com', groups=['GAIA'])
+        user = usecase(user_id='e73626b5-462d-4a3f-bef5-ae7cbb45e124', name='Gabriel', email='gabriel@hotmail.com', groups=['GAIA'])
 
         assert user.user_id == 'e73626b5-462d-4a3f-bef5-ae7cbb45e124'
-        assert user.email == 'gabriel.godoybz@hotmail.com'
+        assert user.email == 'gabriel@hotmail.com'
         assert user.name == 'Gabriel'
         assert user.department == None
         assert user.enabled == True

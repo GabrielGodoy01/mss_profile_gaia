@@ -27,7 +27,7 @@ class Test_UpdateUserController:
             'role_usuarios': True,
             'role_tickets': True,
             'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel.godoybz@hotmail.com'
+            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
         })
 
         response = controller(data)
@@ -68,7 +68,7 @@ class Test_UpdateUserController:
             'role_usuarios': True,
             'role_tickets': True,
             'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel.godoybz@hotmail.com'
+            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
         })
 
         response = controller(data)
@@ -123,7 +123,7 @@ class Test_UpdateUserController:
             'role_usuarios': True,
             'role_tickets': True,
             'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel.godoybz@hotmail.com'
+            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
         })
 
         response = controller(data)
@@ -151,7 +151,7 @@ class Test_UpdateUserController:
             'role_usuarios': True,
             'role_tickets': True,
             'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel.godoybz@hotmail.com'
+            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
         })
 
         response = controller(data)
@@ -179,7 +179,7 @@ class Test_UpdateUserController:
             'role_usuarios': True,
             'role_tickets': True,
             'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel.godoybz@hotmail.com'
+            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
         })
 
         response = controller(data)
@@ -207,7 +207,7 @@ class Test_UpdateUserController:
             'role_usuarios': True,
             'role_tickets': True,
             'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel.godoybz@hotmail.com'
+            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
         })
 
         response = controller(data)
@@ -235,7 +235,7 @@ class Test_UpdateUserController:
             'role_usuarios': True,
             'role_tickets': True,
             'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel.godoybz@hotmail.com'
+            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
         })
 
         response = controller(data)
@@ -263,7 +263,7 @@ class Test_UpdateUserController:
             'role_usuarios': True,
             'role_tickets': True,
             'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel.godoybz@hotmail.com'
+            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
         })
 
         response = controller(data)
@@ -291,7 +291,7 @@ class Test_UpdateUserController:
             'role_usuarios': True,
             'role_tickets': True,
             'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel.godoybz@hotmail.com'
+            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
         })
 
         response = controller(data)
@@ -319,7 +319,7 @@ class Test_UpdateUserController:
             'role_usuarios': True,
             'role_tickets': True,
             'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel.godoybz@hotmail.com'
+            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
         })
 
         response = controller(data)
@@ -347,7 +347,7 @@ class Test_UpdateUserController:
             'role_usuarios': True,
             'role_tickets': True,
             'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel.godoybz@hotmail.com'
+            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
         })
 
         response = controller(data)
@@ -375,7 +375,7 @@ class Test_UpdateUserController:
             'role_selimp': True,
             'role_tickets': True,
             'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel.godoybz@hotmail.com'
+            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
         })
 
         response = controller(data)
@@ -403,7 +403,7 @@ class Test_UpdateUserController:
             'role_selimp': True,
             'role_usuarios': True,
             'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel.godoybz@hotmail.com'
+            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
         })
 
         response = controller(data)
@@ -431,7 +431,7 @@ class Test_UpdateUserController:
             'role_selimp': True,
             'role_usuarios': True,
             'role_tickets': True,
-            'token': 'valid_access_token-in_group-gabriel.godoybz@hotmail.com'
+            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
         })
 
         response = controller(data)

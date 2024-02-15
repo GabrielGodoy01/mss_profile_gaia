@@ -12,7 +12,7 @@ class Test_UpdateUserUsecase:
 
         user = usecase(new_user_data=User(user_id='e73626b5-462d-4a3f-bef5-ae7cbb45e123',email=repo.users_list[0].email, name='User Teste', enabled=False))
 
-        assert user.email == 'gabriel.godoybz@hotmail.com'
+        assert user.email == 'gabriel@hotmail.com'
         assert user.name == 'User Teste'
         assert user.enabled == False
     

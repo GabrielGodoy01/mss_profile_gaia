@@ -14,7 +14,7 @@ class Test_LoginUserController:
         request = HttpRequest(body={
           'user_id': 'e73626b5-462d-4a3f-bef5-ae7cbb45e123',
           'name': 'Gabriel',
-          'email': 'gabriel.godoybz@hotmail.com',
+          'email': 'gabriel@hotmail.com',
           'groups': ['GAIA']
         })
 
@@ -43,7 +43,7 @@ class Test_LoginUserController:
 
         request = HttpRequest(body={
           'name': 'Gabriel',
-          'email': 'gabriel.godoybz@hotmail.com',
+          'email': 'gabriel@hotmail.com',
           'groups': ['GAIA']
         })
 
@@ -59,7 +59,7 @@ class Test_LoginUserController:
 
         request = HttpRequest(body={
           'user_id': 'e73626b5-462d-4a3f-bef5-ae7cbb45e123',
-          'email': 'gabriel.godoybz@hotmail.com',
+          'email': 'gabriel@hotmail.com',
           'groups': ['GAIA']
         })
 
@@ -91,7 +91,7 @@ class Test_LoginUserController:
 
         request = HttpRequest(body={
           'user_id': 'e73626b5-462d-4a3f-bef5-ae7cbb45e123',
-          'email': 'gabriel.godoybz@hotmail.com',
+          'email': 'gabriel@hotmail.com',
           'name': 'Gabriel',
         })
 

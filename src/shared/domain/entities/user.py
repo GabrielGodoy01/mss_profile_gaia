@@ -8,16 +8,26 @@ class User(abc.ABC):
     email: str
     name: str
     department: str = None
-    role_dashboards: bool = None
-    role_fiscalizacao: bool = None
-    role_geoinfra: bool = None
-    role_drenagem: bool = None
+    enabled: bool
+    role_dashboard_qualidade: bool = None
+    role_dashboard_deteccao: bool = None
+    role_dashboard_tempo: bool = None
+    role_dashboard_geoinfra: bool = None
+    role_dashboard_recapeamento: bool = None
+    role_dashboard_anel_viario: bool = None
+    role_dashboard_sist_unificado: bool = None
+    role_modfisc_convias: bool = None
+    role_modfisc_osmv: bool = None
+    role_modfisc_osct: bool = None
+    role_modfisc_relatoriomv: bool = None
+    role_modfisc_vistoriapv: bool = None
+    role_modfisc_vistoriarecape: bool = None
+    role_interf_mapa: bool = None
+    role_interf_protproc: bool = None
+    role_drenagem_ativos: bool = None
+    role_drenagem_redes: bool = None
     role_usuarios: bool = None
     role_tickets: bool = None
-    role_cadastro_obra: bool = None
-    role_selimp: bool = None
-    role_compat: bool = None
-    enabled: bool
 
     MIN_NAME_LENGTH = 2
     USER_ID_LENGTH = 36
@@ -25,15 +35,25 @@ class User(abc.ABC):
     def __init__(self, user_id: str, email: str, name: str,
             enabled: bool,
             department: str = None,
-            role_dashboards: bool = None, 
-            role_fiscalizacao: bool = None,
-            role_geoinfra: bool = None,
-            role_drenagem: bool = None,
+            role_dashboard_qualidade: bool = None,
+            role_dashboard_deteccao: bool = None,
+            role_dashboard_tempo: bool = None,
+            role_dashboard_geoinfra: bool = None,
+            role_dashboard_recapeamento: bool = None,
+            role_dashboard_anel_viario: bool = None,
+            role_dashboard_sist_unificado: bool = None,
+            role_modfisc_convias: bool = None,
+            role_modfisc_osmv: bool = None,
+            role_modfisc_osct: bool = None,
+            role_modfisc_relatoriomv: bool = None,
+            role_modfisc_vistoriapv: bool = None,
+            role_modfisc_vistoriarecape: bool = None,
+            role_interf_mapa: bool = None,
+            role_interf_protproc: bool = None,
+            role_drenagem_ativos: bool = None,
+            role_drenagem_redes: bool = None,
             role_usuarios: bool = None,
             role_tickets: bool = None,
-            role_cadastro_obra: bool = None,
-            role_selimp: bool = None,
-            role_compat: bool = None,
         ):
 
         if not User.validate_user_id(user_id):
@@ -48,30 +68,99 @@ class User(abc.ABC):
             raise EntityError("name")
         self.name = name
 
+        if type(enabled) is not bool:
+            raise EntityError("enabled")
+        self.enabled = enabled
+
         if department is not None:
             if type(department) != str:
                 raise EntityError("department")
         self.department = department
 
-        if role_dashboards is not None:
-            if type(role_dashboards) != bool:
-                raise EntityError("role_dashboards")
-        self.role_dashboards = role_dashboards
+        if role_dashboard_qualidade is not None:
+            if type(role_dashboard_qualidade) != bool:
+                raise EntityError("role_dashboard_qualidade")
+        self.role_dashboard_qualidade = role_dashboard_qualidade
 
-        if role_fiscalizacao is not None:
-            if type(role_fiscalizacao) != bool:
-                raise EntityError("role_fiscalizacao")
-        self.role_fiscalizacao = role_fiscalizacao
+        if role_dashboard_deteccao is not None:
+            if type(role_dashboard_deteccao) != bool:
+                raise EntityError("role_dashboard_deteccao")
+        self.role_dashboard_deteccao = role_dashboard_deteccao
 
-        if role_geoinfra is not None:
-            if type(role_geoinfra) != bool:
-                raise EntityError("role_geoinfra")
-        self.role_geoinfra = role_geoinfra
+        if role_dashboard_tempo is not None:
+            if type(role_dashboard_tempo) != bool:
+                raise EntityError("role_dashboard_tempo")
+        self.role_dashboard_tempo = role_dashboard_tempo
 
-        if role_drenagem is not None:
-            if type(role_drenagem) != bool:
-                raise EntityError("role_drenagem")
-        self.role_drenagem = role_drenagem
+        if role_dashboard_geoinfra is not None:
+            if type(role_dashboard_geoinfra) != bool:
+                raise EntityError("role_dashboard_geoinfra")
+        self.role_dashboard_geoinfra = role_dashboard_geoinfra
+
+        if role_dashboard_recapeamento is not None:
+            if type(role_dashboard_recapeamento) != bool:
+                raise EntityError("role_dashboard_recapeamento")
+        self.role_dashboard_recapeamento = role_dashboard_recapeamento
+
+        if role_dashboard_anel_viario is not None:
+            if type(role_dashboard_anel_viario) != bool:
+                raise EntityError("role_dashboard_anel_viario")
+        self.role_dashboard_anel_viario = role_dashboard_anel_viario
+
+        if role_dashboard_sist_unificado is not None:
+            if type(role_dashboard_sist_unificado) != bool:
+                raise EntityError("role_dashboard_sist_unificado")
+        self.role_dashboard_sist_unificado = role_dashboard_sist_unificado
+
+        if role_modfisc_convias is not None:
+            if type(role_modfisc_convias) != bool:
+                raise EntityError("role_modfisc_convias")
+        self.role_modfisc_convias = role_modfisc_convias
+
+        if role_modfisc_osmv is not None:
+            if type(role_modfisc_osmv) != bool:
+                raise EntityError("role_modfisc_osmv")
+        self.role_modfisc_osmv = role_modfisc_osmv
+
+        if role_modfisc_osct is not None:
+            if type(role_modfisc_osct) != bool:
+                raise EntityError("role_modfisc_osct")
+        self.role_modfisc_osct = role_modfisc_osct
+
+        if role_modfisc_relatoriomv is not None:
+            if type(role_modfisc_relatoriomv) != bool:
+                raise EntityError("role_modfisc_relatoriomv")
+        self.role_modfisc_relatoriomv = role_modfisc_relatoriomv
+
+        if role_modfisc_vistoriapv is not None:
+            if type(role_modfisc_vistoriapv) != bool:
+                raise EntityError("role_modfisc_vistoriapv")
+        self.role_modfisc_vistoriapv = role_modfisc_vistoriapv
+
+        if role_modfisc_vistoriarecape is not None:
+            if type(role_modfisc_vistoriarecape) != bool:
+                raise EntityError("role_modfisc_vistoriarecape")
+        self.role_modfisc_vistoriarecape = role_modfisc_vistoriarecape
+
+        if role_interf_mapa is not None:
+            if type(role_interf_mapa) != bool:
+                raise EntityError("role_interf_mapa")
+        self.role_interf_mapa = role_interf_mapa
+
+        if role_interf_protproc is not None:
+            if type(role_interf_protproc) != bool:
+                raise EntityError("role_interf_protproc")
+        self.role_interf_protproc = role_interf_protproc
+
+        if role_drenagem_ativos is not None:
+            if type(role_drenagem_ativos) != bool:
+                raise EntityError("role_drenagem_ativos")
+        self.role_drenagem_ativos = role_drenagem_ativos
+
+        if role_drenagem_redes is not None:
+            if type(role_drenagem_redes) != bool:
+                raise EntityError("role_drenagem_redes")
+        self.role_drenagem_redes = role_drenagem_redes
 
         if role_usuarios is not None:
             if type(role_usuarios) != bool:
@@ -82,25 +171,6 @@ class User(abc.ABC):
             if type(role_tickets) != bool:
                 raise EntityError("role_tickets")
         self.role_tickets = role_tickets
-
-        if role_cadastro_obra is not None:
-            if type(role_cadastro_obra) != bool:
-                raise EntityError("role_cadastro_obra")
-        self.role_cadastro_obra = role_cadastro_obra
-
-        if role_selimp is not None:
-            if type(role_selimp) != bool:
-                raise EntityError("role_selimp")
-        self.role_selimp = role_selimp
-
-        if role_compat is not None:
-            if type(role_compat) != bool:
-                raise EntityError("role_compat")
-        self.role_compat = role_compat
-
-        if type(enabled) is not bool:
-            raise EntityError("enabled")
-        self.enabled = enabled
 
 
 
@@ -144,13 +214,23 @@ class User(abc.ABC):
             'name': self.name,
             'department': self.department,
             'enabled': self.enabled,
-            'role_dashboards': self.role_dashboards,
-            'role_fiscalizacao': self.role_fiscalizacao,
-            'role_geoinfra': self.role_geoinfra,
-            'role_drenagem': self.role_drenagem,
+            'role_dashboard_qualidade': self.role_dashboard_qualidade,
+            'role_dashboard_deteccao': self.role_dashboard_deteccao,
+            'role_dashboard_tempo': self.role_dashboard_tempo,
+            'role_dashboard_geoinfra': self.role_dashboard_geoinfra,
+            'role_dashboard_recapeamento': self.role_dashboard_recapeamento,
+            'role_dashboard_anel_viario': self.role_dashboard_anel_viario,
+            'role_dashboard_sist_unificado': self.role_dashboard_sist_unificado,
+            'role_modfisc_convias': self.role_modfisc_convias,
+            'role_modfisc_osmv': self.role_modfisc_osmv,
+            'role_modfisc_osct': self.role_modfisc_osct,
+            'role_modfisc_relatoriomv': self.role_modfisc_relatoriomv,
+            'role_modfisc_vistoriapv': self.role_modfisc_vistoriapv,
+            'role_modfisc_vistoriarecape': self.role_modfisc_vistoriarecape,
+            'role_interf_mapa': self.role_interf_mapa,
+            'role_interf_protproc': self.role_interf_protproc,
+            'role_drenagem_ativos': self.role_drenagem_ativos,
+            'role_drenagem_redes': self.role_drenagem_redes,
             'role_usuarios': self.role_usuarios,
-            'role_tickets': self.role_tickets,
-            'role_cadastro_obra': self.role_cadastro_obra,
-            'role_selimp': self.role_selimp,
-            'role_compat': self.role_compat
+            'role_tickets': self.role_tickets
         }

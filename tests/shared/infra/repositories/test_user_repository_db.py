@@ -8,7 +8,7 @@ class Test_UserRepositoryDb:
     @pytest.mark.skip("Can't test dynamo in Github")
     def test_check_user_group(self):
         repo = UserRepositoryDynamo()
-        resp = repo.check_user_group(email="gabriel.godoybz@hotmail.com")
+        resp = repo.check_user_group(email="gabriel@hotmail.com")
         assert resp == True
 
     @pytest.mark.skip("Can't test dynamo in Github")
