@@ -23,13 +23,23 @@ class Test_LoginUserController:
         assert response.status_code == 200
         assert response.body["user"]["email"] == repo.users_list[0].email
         assert response.body["user"]["name"] == repo.users_list[0].name
-        assert response.body["user"]["role_cadastro_obra"] == repo.users_list[0].role_cadastro_obra
-        assert response.body["user"]["role_compat"] == repo.users_list[0].role_compat
-        assert response.body["user"]["role_dashboards"] == repo.users_list[0].role_dashboards
-        assert response.body["user"]["role_drenagem"] == repo.users_list[0].role_drenagem
-        assert response.body["user"]["role_fiscalizacao"] == repo.users_list[0].role_fiscalizacao
-        assert response.body["user"]["role_geoinfra"] == repo.users_list[0].role_geoinfra
-        assert response.body["user"]["role_selimp"] == repo.users_list[0].role_selimp
+        assert response.body["user"]["role_dashboard_qualidade"] == repo.users_list[0].role_dashboard_qualidade
+        assert response.body["user"]["role_dashboard_deteccao"] == repo.users_list[0].role_dashboard_deteccao
+        assert response.body["user"]["role_dashboard_tempo"] == repo.users_list[0].role_dashboard_tempo
+        assert response.body["user"]["role_dashboard_geoinfra"] == repo.users_list[0].role_dashboard_geoinfra
+        assert response.body["user"]["role_dashboard_recapeamento"] == repo.users_list[0].role_dashboard_recapeamento
+        assert response.body["user"]["role_dashboard_anel_viario"] == repo.users_list[0].role_dashboard_anel_viario
+        assert response.body["user"]["role_dashboard_sist_unificado"] == repo.users_list[0].role_dashboard_sist_unificado
+        assert response.body["user"]["role_modfisc_convias"] == repo.users_list[0].role_modfisc_convias
+        assert response.body["user"]["role_modfisc_osmv"] == repo.users_list[0].role_modfisc_osmv
+        assert response.body["user"]["role_modfisc_osct"] == repo.users_list[0].role_modfisc_osct
+        assert response.body["user"]["role_modfisc_relatoriomv"] == repo.users_list[0].role_modfisc_relatoriomv
+        assert response.body["user"]["role_modfisc_vistoriapv"] == repo.users_list[0].role_modfisc_vistoriapv
+        assert response.body["user"]["role_modfisc_vistoriarecape"] == repo.users_list[0].role_modfisc_vistoriarecape
+        assert response.body["user"]["role_interf_mapa"] == repo.users_list[0].role_interf_mapa
+        assert response.body["user"]["role_interf_protproc"] == repo.users_list[0].role_interf_protproc
+        assert response.body["user"]["role_drenagem_ativos"] == repo.users_list[0].role_drenagem_ativos
+        assert response.body["user"]["role_drenagem_redes"] == repo.users_list[0].role_drenagem_redes
         assert response.body["user"]["role_usuarios"] == repo.users_list[0].role_usuarios
         assert response.body["user"]["role_tickets"] == repo.users_list[0].role_tickets
         assert response.body["message"] == "Login realizado com sucesso!"

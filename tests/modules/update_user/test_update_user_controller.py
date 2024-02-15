@@ -18,16 +18,26 @@ class Test_UpdateUserController:
             'name': 'User Teste',
             'enabled': False,
             'department': 'INTELICITY',
-            'role_dashboards': True,
-            'role_fiscalizacao': True,
-            'role_compat': True,
-            'role_drenagem': True,
-            'role_geoinfra': True,
-            'role_selimp': True,
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
             'role_usuarios': True,
             'role_tickets': True,
-            'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
+            
         })
 
         response = controller(data)
@@ -37,16 +47,25 @@ class Test_UpdateUserController:
         assert response.body["user"]["name"] == 'User Teste'
         assert response.body["user"]["enabled"] == False
         assert response.body["user"]["department"] == 'INTELICITY'
-        assert response.body["user"]["role_dashboards"] == True
-        assert response.body["user"]["role_fiscalizacao"] == True
-        assert response.body["user"]["role_compat"] == True
-        assert response.body["user"]["role_drenagem"] == True
-        assert response.body["user"]["role_geoinfra"] == True
-        assert response.body["user"]["role_selimp"] == True
+        assert response.body["user"]["role_dashboard_qualidade"] == True
+        assert response.body["user"]["role_dashboard_deteccao"] == True
+        assert response.body["user"]["role_dashboard_tempo"] == True
+        assert response.body["user"]["role_dashboard_geoinfra"] == True
+        assert response.body["user"]["role_dashboard_recapeamento"] == True
+        assert response.body["user"]["role_dashboard_anel_viario"] == True
+        assert response.body["user"]["role_dashboard_sist_unificado"] == True
+        assert response.body["user"]["role_modfisc_convias"] == True
+        assert response.body["user"]["role_modfisc_osmv"] == True
+        assert response.body["user"]["role_modfisc_osct"] == True
+        assert response.body["user"]["role_modfisc_relatoriomv"] == True
+        assert response.body["user"]["role_modfisc_vistoriapv"] == True
+        assert response.body["user"]["role_modfisc_vistoriarecape"] == True
+        assert response.body["user"]["role_interf_mapa"] == True
+        assert response.body["user"]["role_interf_protproc"] == True
+        assert response.body["user"]["role_drenagem_ativos"] == True
+        assert response.body["user"]["role_drenagem_redes"] == True
         assert response.body["user"]["role_usuarios"] == True
         assert response.body["user"]["role_tickets"] == True
-        assert response.body["user"]["role_cadastro_obra"] == True
-        assert response.body["message"] == 'Usuário atualizado com sucesso!'
     
     def test_update_user_controller_missing_email(self):
         repo = UserRepositoryMock()
@@ -59,16 +78,26 @@ class Test_UpdateUserController:
             'name': 'User Teste',
             'enabled': False,
             'department': 'INTELICITY',
-            'role_dashboards': True,
-            'role_fiscalizacao': True,
-            'role_compat': True,
-            'role_drenagem': True,
-            'role_geoinfra': True,
-            'role_selimp': True,
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
             'role_usuarios': True,
             'role_tickets': True,
-            'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
+            
         })
 
         response = controller(data)
@@ -87,15 +116,25 @@ class Test_UpdateUserController:
             'name': 'User Teste',
             'enabled': False,
             'department': 'INTELICITY',
-            'role_dashboards': True,
-            'role_fiscalizacao': True,
-            'role_compat': True,
-            'role_drenagem': True,
-            'role_geoinfra': True,
-            'role_selimp': True,
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
             'role_usuarios': True,
             'role_tickets': True,
-            'role_cadastro_obra': True,
         })
 
         response = controller(data)
@@ -114,16 +153,26 @@ class Test_UpdateUserController:
             'email': repo.users_list[0].email,
             'enabled': False,
             'department': 'INTELICITY',
-            'role_dashboards': True,
-            'role_fiscalizacao': True,
-            'role_compat': True,
-            'role_drenagem': True,
-            'role_geoinfra': True,
-            'role_selimp': True,
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
             'role_usuarios': True,
             'role_tickets': True,
-            'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
+            
         })
 
         response = controller(data)
@@ -142,16 +191,26 @@ class Test_UpdateUserController:
             'email': repo.users_list[0].email,
             'name': 'User Teste',
             'enabled': False,
-            'role_dashboards': True,
-            'role_fiscalizacao': True,
-            'role_compat': True,
-            'role_drenagem': True,
-            'role_geoinfra': True,
-            'role_selimp': True,
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
             'role_usuarios': True,
             'role_tickets': True,
-            'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
+            
         })
 
         response = controller(data)
@@ -170,16 +229,26 @@ class Test_UpdateUserController:
             'email': repo.users_list[0].email,
             'name': 'User Teste',
             'department': 'INTELICITY',
-            'role_dashboards': True,
-            'role_fiscalizacao': True,
-            'role_compat': True,
-            'role_drenagem': True,
-            'role_geoinfra': True,
-            'role_selimp': True,
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
             'role_usuarios': True,
             'role_tickets': True,
-            'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
+            
         })
 
         response = controller(data)
@@ -187,7 +256,7 @@ class Test_UpdateUserController:
         assert response.status_code == 400
         assert response.body["message"] == 'Parâmetro ausente: enabled'
 
-    def test_update_user_controller_missing_role_dashboards(self):
+    def test_update_user_controller_missing_role_dashboards_qualidade(self):
         repo = UserRepositoryMock()
         usecase = UpdateUserUsecase(repo)
 
@@ -199,23 +268,33 @@ class Test_UpdateUserController:
             'name': 'User Teste',
             'enabled': False,
             'department': 'INTELICITY',
-            'role_fiscalizacao': True,
-            'role_compat': True,
-            'role_drenagem': True,
-            'role_geoinfra': True,
-            'role_selimp': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
             'role_usuarios': True,
             'role_tickets': True,
-            'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
+            
         })
 
         response = controller(data)
-        
-        assert response.status_code == 400
-        assert response.body["message"] == 'Parâmetro ausente: role_dashboards'
 
-    def test_update_user_controller_missing_role_fiscalizacao(self):
+        assert response.status_code == 400
+        assert response.body["message"] == 'Parâmetro ausente: role_dashboard_qualidade'
+    
+    def test_update_user_controller_missing_role_dashboards_deteccao(self):
         repo = UserRepositoryMock()
         usecase = UpdateUserUsecase(repo)
 
@@ -227,23 +306,33 @@ class Test_UpdateUserController:
             'name': 'User Teste',
             'enabled': False,
             'department': 'INTELICITY',
-            'role_dashboards': True,
-            'role_compat': True,
-            'role_drenagem': True,
-            'role_geoinfra': True,
-            'role_selimp': True,
+            'role_dashboard_qualidade': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
             'role_usuarios': True,
             'role_tickets': True,
-            'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
+            
         })
 
         response = controller(data)
-        
-        assert response.status_code == 400
-        assert response.body["message"] == 'Parâmetro ausente: role_fiscalizacao'
 
-    def test_update_user_controller_missing_role_compat(self):
+        assert response.status_code == 400
+        assert response.body["message"] == 'Parâmetro ausente: role_dashboard_deteccao'
+    
+    def test_update_user_controller_missing_role_dashboards_tempo(self):
         repo = UserRepositoryMock()
         usecase = UpdateUserUsecase(repo)
 
@@ -255,23 +344,33 @@ class Test_UpdateUserController:
             'name': 'User Teste',
             'enabled': False,
             'department': 'INTELICITY',
-            'role_dashboards': True,
-            'role_fiscalizacao': True,
-            'role_drenagem': True,
-            'role_geoinfra': True,
-            'role_selimp': True,
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
             'role_usuarios': True,
             'role_tickets': True,
-            'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
+            
         })
 
         response = controller(data)
-        
-        assert response.status_code == 400
-        assert response.body["message"] == 'Parâmetro ausente: role_compat'
 
-    def test_update_user_controller_missing_role_drenagem(self):
+        assert response.status_code == 400
+        assert response.body["message"] == 'Parâmetro ausente: role_dashboard_tempo'
+    
+    def test_update_user_controller_missing_role_dashboards_geoinfra(self):
         repo = UserRepositoryMock()
         usecase = UpdateUserUsecase(repo)
 
@@ -283,23 +382,33 @@ class Test_UpdateUserController:
             'name': 'User Teste',
             'enabled': False,
             'department': 'INTELICITY',
-            'role_dashboards': True,
-            'role_fiscalizacao': True,
-            'role_compat': True,
-            'role_geoinfra': True,
-            'role_selimp': True,
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
             'role_usuarios': True,
             'role_tickets': True,
-            'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
+            
         })
 
         response = controller(data)
-        
-        assert response.status_code == 400
-        assert response.body["message"] == 'Parâmetro ausente: role_drenagem'
 
-    def test_update_user_controller_missing_role_geoinfra(self):
+        assert response.status_code == 400
+        assert response.body["message"] == 'Parâmetro ausente: role_dashboard_geoinfra'
+    
+    def test_update_user_controller_missing_role_dashboards_recapeamento(self):
         repo = UserRepositoryMock()
         usecase = UpdateUserUsecase(repo)
 
@@ -311,23 +420,33 @@ class Test_UpdateUserController:
             'name': 'User Teste',
             'enabled': False,
             'department': 'INTELICITY',
-            'role_dashboards': True,
-            'role_fiscalizacao': True,
-            'role_compat': True,
-            'role_drenagem': True,
-            'role_selimp': True,
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
             'role_usuarios': True,
             'role_tickets': True,
-            'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
+            
         })
 
         response = controller(data)
-        
-        assert response.status_code == 400
-        assert response.body["message"] == 'Parâmetro ausente: role_geoinfra'
 
-    def test_update_user_controller_missing_role_selimp(self):
+        assert response.status_code == 400
+        assert response.body["message"] == 'Parâmetro ausente: role_dashboard_recapeamento'
+    
+    def test_update_user_controller_missing_role_dashboards_anel_viario(self):
         repo = UserRepositoryMock()
         usecase = UpdateUserUsecase(repo)
 
@@ -339,21 +458,450 @@ class Test_UpdateUserController:
             'name': 'User Teste',
             'enabled': False,
             'department': 'INTELICITY',
-            'role_dashboards': True,
-            'role_fiscalizacao': True,
-            'role_compat': True,
-            'role_drenagem': True,
-            'role_geoinfra': True,
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
             'role_usuarios': True,
             'role_tickets': True,
-            'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
+            
         })
 
         response = controller(data)
-        
+
         assert response.status_code == 400
-        assert response.body["message"] == 'Parâmetro ausente: role_selimp'
+        assert response.body["message"] == 'Parâmetro ausente: role_dashboard_anel_viario'
+    
+    def test_update_user_controller_missing_role_dashboards_sist_unificado(self):
+        repo = UserRepositoryMock()
+        usecase = UpdateUserUsecase(repo)
+
+        controller = UpdateUserController(usecase)
+
+        data = HttpRequest(body={
+            'user_id': "e73626b5-462d-4a3f-bef5-ae7cbb45e123",
+            'email': repo.users_list[0].email,
+            'name': 'User Teste',
+            'enabled': False,
+            'department': 'INTELICITY',
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
+            'role_usuarios': True,
+            'role_tickets': True,
+            
+        })
+
+        response = controller(data)
+
+        assert response.status_code == 400
+        assert response.body["message"] == 'Parâmetro ausente: role_dashboard_sist_unificado'
+
+    def test_update_user_controller_missing_role_modfisc_convias(self):
+        repo = UserRepositoryMock()
+        usecase = UpdateUserUsecase(repo)
+
+        controller = UpdateUserController(usecase)
+
+        data = HttpRequest(body={
+            'user_id': "e73626b5-462d-4a3f-bef5-ae7cbb45e123",
+            'email': repo.users_list[0].email,
+            'name': 'User Teste',
+            'enabled': False,
+            'department': 'INTELICITY',
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
+            'role_usuarios': True,
+            'role_tickets': True,
+            
+        })
+
+        response = controller(data)
+
+        assert response.status_code == 400
+        assert response.body["message"] == 'Parâmetro ausente: role_modfisc_convias'
+
+    def test_update_user_controller_missing_role_modfisc_osmv(self):
+        repo = UserRepositoryMock()
+        usecase = UpdateUserUsecase(repo)
+
+        controller = UpdateUserController(usecase)
+
+        data = HttpRequest(body={
+            'user_id': "e73626b5-462d-4a3f-bef5-ae7cbb45e123",
+            'email': repo.users_list[0].email,
+            'name': 'User Teste',
+            'enabled': False,
+            'department': 'INTELICITY',
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
+            'role_usuarios': True,
+            'role_tickets': True,
+            
+        })
+
+        response = controller(data)
+
+        assert response.status_code == 400
+        assert response.body["message"] == 'Parâmetro ausente: role_modfisc_osmv'
+    
+    def test_update_user_controller_missing_role_modfisc_osct(self):
+        repo = UserRepositoryMock()
+        usecase = UpdateUserUsecase(repo)
+
+        controller = UpdateUserController(usecase)
+
+        data = HttpRequest(body={
+            'user_id': "e73626b5-462d-4a3f-bef5-ae7cbb45e123",
+            'email': repo.users_list[0].email,
+            'name': 'User Teste',
+            'enabled': False,
+            'department': 'INTELICITY',
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
+            'role_usuarios': True,
+            'role_tickets': True,
+            
+        })
+
+        response = controller(data)
+
+        assert response.status_code == 400
+        assert response.body["message"] == 'Parâmetro ausente: role_modfisc_osct'
+    
+    def test_update_user_controller_missing_role_modfisc_relatoriomv(self):
+        repo = UserRepositoryMock()
+        usecase = UpdateUserUsecase(repo)
+
+        controller = UpdateUserController(usecase)
+
+        data = HttpRequest(body={
+            'user_id': "e73626b5-462d-4a3f-bef5-ae7cbb45e123",
+            'email': repo.users_list[0].email,
+            'name': 'User Teste',
+            'enabled': False,
+            'department': 'INTELICITY',
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
+            'role_usuarios': True,
+            'role_tickets': True,
+            
+        })
+
+        response = controller(data)
+
+        assert response.status_code == 400
+        assert response.body["message"] == 'Parâmetro ausente: role_modfisc_relatoriomv'
+
+
+    def test_update_user_controller_missing_role_modfisc_vistoriapv(self):
+        repo = UserRepositoryMock()
+        usecase = UpdateUserUsecase(repo)
+
+        controller = UpdateUserController(usecase)
+
+        data = HttpRequest(body={
+            'user_id': "e73626b5-462d-4a3f-bef5-ae7cbb45e123",
+            'email': repo.users_list[0].email,
+            'name': 'User Teste',
+            'enabled': False,
+            'department': 'INTELICITY',
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
+            'role_usuarios': True,
+            'role_tickets': True,
+            
+        })
+
+        response = controller(data)
+
+        assert response.status_code == 400
+        assert response.body["message"] == 'Parâmetro ausente: role_modfisc_vistoriapv'
+
+    def test_update_user_controller_missing_role_modfisc_vistoriarecape(self):
+        repo = UserRepositoryMock()
+        usecase = UpdateUserUsecase(repo)
+
+        controller = UpdateUserController(usecase)
+
+        data = HttpRequest(body={
+            'user_id': "e73626b5-462d-4a3f-bef5-ae7cbb45e123",
+            'email': repo.users_list[0].email,
+            'name': 'User Teste',
+            'enabled': False,
+            'department': 'INTELICITY',
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
+            'role_usuarios': True,
+            'role_tickets': True,
+            
+        })
+
+        response = controller(data)
+
+        assert response.status_code == 400
+        assert response.body["message"] == 'Parâmetro ausente: role_modfisc_vistoriarecape'
+    
+    def test_update_user_controller_missing_role_interf_mapa(self):
+        repo = UserRepositoryMock()
+        usecase = UpdateUserUsecase(repo)
+
+        controller = UpdateUserController(usecase)
+
+        data = HttpRequest(body={
+            'user_id': "e73626b5-462d-4a3f-bef5-ae7cbb45e123",
+            'email': repo.users_list[0].email,
+            'name': 'User Teste',
+            'enabled': False,
+            'department': 'INTELICITY',
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
+            'role_usuarios': True,
+            'role_tickets': True,
+            
+        })
+
+        response = controller(data)
+
+        assert response.status_code == 400
+        assert response.body["message"] == 'Parâmetro ausente: role_interf_mapa'
+
+    def test_update_user_controller_missing_role_interf_protproc(self):
+        repo = UserRepositoryMock()
+        usecase = UpdateUserUsecase(repo)
+
+        controller = UpdateUserController(usecase)
+
+        data = HttpRequest(body={
+            'user_id': "e73626b5-462d-4a3f-bef5-ae7cbb45e123",
+            'email': repo.users_list[0].email,
+            'name': 'User Teste',
+            'enabled': False,
+            'department': 'INTELICITY',
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
+            'role_usuarios': True,
+            'role_tickets': True,
+            
+        })
+
+        response = controller(data)
+
+        assert response.status_code == 400
+        assert response.body["message"] == 'Parâmetro ausente: role_interf_protproc'
+    
+    def test_update_user_controller_missing_role_drenagem_ativos(self):
+        repo = UserRepositoryMock()
+        usecase = UpdateUserUsecase(repo)
+
+        controller = UpdateUserController(usecase)
+
+        data = HttpRequest(body={
+            'user_id': "e73626b5-462d-4a3f-bef5-ae7cbb45e123",
+            'email': repo.users_list[0].email,
+            'name': 'User Teste',
+            'enabled': False,
+            'department': 'INTELICITY',
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_redes': True,
+            'role_usuarios': True,
+            'role_tickets': True,
+            
+        })
+
+        response = controller(data)
+
+        assert response.status_code == 400
+        assert response.body["message"] == 'Parâmetro ausente: role_drenagem_ativos'
+    
+    def test_update_user_controller_missing_role_drenagem_redes(self):
+        repo = UserRepositoryMock()
+        usecase = UpdateUserUsecase(repo)
+
+        controller = UpdateUserController(usecase)
+
+        data = HttpRequest(body={
+            'user_id': "e73626b5-462d-4a3f-bef5-ae7cbb45e123",
+            'email': repo.users_list[0].email,
+            'name': 'User Teste',
+            'enabled': False,
+            'department': 'INTELICITY',
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_usuarios': True,
+            'role_tickets': True,
+            
+        })
+
+        response = controller(data)
+
+        assert response.status_code == 400
+        assert response.body["message"] == 'Parâmetro ausente: role_drenagem_redes'
 
     def test_update_user_controller_missing_role_usuarios(self):
         repo = UserRepositoryMock()
@@ -367,22 +915,32 @@ class Test_UpdateUserController:
             'name': 'User Teste',
             'enabled': False,
             'department': 'INTELICITY',
-            'role_dashboards': True,
-            'role_fiscalizacao': True,
-            'role_compat': True,
-            'role_drenagem': True,
-            'role_geoinfra': True,
-            'role_selimp': True,
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
             'role_tickets': True,
-            'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
+            
         })
 
         response = controller(data)
-        
+
         assert response.status_code == 400
         assert response.body["message"] == 'Parâmetro ausente: role_usuarios'
-
+    
     def test_update_user_controller_missing_role_tickets(self):
         repo = UserRepositoryMock()
         usecase = UpdateUserUsecase(repo)
@@ -395,46 +953,27 @@ class Test_UpdateUserController:
             'name': 'User Teste',
             'enabled': False,
             'department': 'INTELICITY',
-            'role_dashboards': True,
-            'role_fiscalizacao': True,
-            'role_compat': True,
-            'role_drenagem': True,
-            'role_geoinfra': True,
-            'role_selimp': True,
+            'role_dashboard_qualidade': True,
+            'role_dashboard_deteccao': True,
+            'role_dashboard_tempo': True,
+            'role_dashboard_geoinfra': True,
+            'role_dashboard_recapeamento': True,
+            'role_dashboard_anel_viario': True,
+            'role_dashboard_sist_unificado': True,
+            'role_modfisc_convias': True,
+            'role_modfisc_osmv': True,
+            'role_modfisc_osct': True,
+            'role_modfisc_relatoriomv': True,
+            'role_modfisc_vistoriapv': True,
+            'role_modfisc_vistoriarecape': True,
+            'role_interf_mapa': True,
+            'role_interf_protproc': True,
+            'role_drenagem_ativos': True,
+            'role_drenagem_redes': True,
             'role_usuarios': True,
-            'role_cadastro_obra': True,
-            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
         })
 
         response = controller(data)
-        
+
         assert response.status_code == 400
         assert response.body["message"] == 'Parâmetro ausente: role_tickets'
-
-    def test_update_user_controller_missing_role_cadastro_obra(self):
-        repo = UserRepositoryMock()
-        usecase = UpdateUserUsecase(repo)
-
-        controller = UpdateUserController(usecase)
-
-        data = HttpRequest(body={
-            'user_id': "e73626b5-462d-4a3f-bef5-ae7cbb45e123",
-            'email': repo.users_list[0].email,
-            'name': 'User Teste',
-            'enabled': False,
-            'department': 'INTELICITY',
-            'role_dashboards': True,
-            'role_fiscalizacao': True,
-            'role_compat': True,
-            'role_drenagem': True,
-            'role_geoinfra': True,
-            'role_selimp': True,
-            'role_usuarios': True,
-            'role_tickets': True,
-            'token': 'valid_access_token-in_group-gabriel@hotmail.com'
-        })
-
-        response = controller(data)
-        
-        assert response.status_code == 400
-        assert response.body["message"] == 'Parâmetro ausente: role_cadastro_obra'
